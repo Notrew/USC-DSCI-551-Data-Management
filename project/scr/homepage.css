@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,600&display=swap');
+
+body {
+    background-color:rgba(143, 188, 143, 0.766);
+    font-family: 'Montserrat', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    font-size: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    padding: 30px 5%;
+    background-image: linear-gradient(rgba(230, 230, 230, 0.75), rgba(230, 230, 230, 0.75)),
+    url(https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8b25saW5lJTIwc2hvcHBpbmd8ZW58MHx8MHx8&w=1000&q=80);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container {
+    height: 100%;
+    width: 80%;
+    align-items: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+}
+
+nav {
+    flex: 1;
+    text-align: right;
+    color: rgb(0, 0, 0);
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 10px 10px;
+}
+
+nav ul li a {
+    font-size: 20px;
+    color: darkolivegreen;
+    transition: all 0.3s ease 0s;
+}
+
+nav ul li a:hover {
+    color: rgb(255, 255, 255);
+}
+
+button {
+    padding: 10px 25px;
+    background-color:darkseagreen;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    font-family: 'Montserrat', sans-serif;
+}
+
+button:hover {
+    background-color: #ffffff;
+}
+
+#postList {
+    padding-inline-start: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.post {
+    list-style-type: none;
+    background-color: #ffffff;
+    border-radius: 3px;
+    padding: 10px 20px;
+    display: inline-block;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        'Item image'
+        'Price image'
+        'Image image';
+    text-align: left;
+}
+
+.post > h2 {
+    grid-area: Item;
+    margin-top: 0px;
+    font-size: 15px;
+}
+
+.post > p {
+    grid-area: Price;
+    margin: 0;
+    margin-bottom: 0px;
+    text-align: right;
+}
+
+.post > img {
+    max-height: 300px;
+    max-width: 300px;
+    grid-area: Image;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#searchBar {
+    width: 30%;
+    height: 32px;
+    border-radius: 3px;
+    border: 1px solid #ffffff;
+    padding: 5px 10px;
+    font-size: 12px;
+    margin-top: -18px
+}
+
+#searchBar2 {
+    width: 30%;
+    height: 32px;
+    border-radius: 3px;
+    border: 1px solid #ffffff;
+    padding: 5px 10px;
+    font-size: 12px;
+    margin-top: -18px
+} 
+
+#searchBar3 {
+    width: 30%;
+    height: 32px;
+    border-radius: 3px;
+    border: 1px solid #ffffff;
+    padding: 5px 10px;
+    font-size: 12px;
+    margin-top: -18px
+} */
+
+
+#searchWrapper {
+    align-items: center;    
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.7);
+}
