@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>iRecycler - Profile</title>
+        <link rel="stylesheet" href="profile.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    </head>
+    <body>
+        <header>
+            <div class="header">
+                iRecycler
+            </div>
+            <nav>
+                <ul>
+                    <li id="homepage"><a href="homepage.html"><button>Homepage</button></a></li>
+                    <li id="post"><a href="posting.html"><button>New Post</button></a></li>
+                    <button id="login"><a href="login.html">Login</a></button>
+                    <li><button id="logout" onclick="logout()">Logout</button></li>
+                </ul>
+            </nav>
+            <br><br><br><br><br>
+        </header>
+        <div class="container">
+            <br>
+            <div>
+                Manage Your Posts
+            </div>
+            <br>
+            <div id="searchWrapper">
+                <input type="text" name="searchBar" id="searchBar" placeholder="Search item name..." />
+                <input type="text" name="searchBar2" id="searchBar2" placeholder="Search category name..." />
+            </div>
+            <br>
+            <ul id="postList"></ul>
+            <br><br><br>
+        </div>
+        <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+        <script src="profile.js"></script>
+    </body>
+</html>
