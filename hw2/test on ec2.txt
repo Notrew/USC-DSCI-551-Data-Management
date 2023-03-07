@@ -1,0 +1,112 @@
+Last login: Thu Feb 17 20:21:17 on ttys001
+(base) notre@NotredeMacBook-Air ~ % ls
+Applications	Downloads	Movies		Public		hadoop_test
+Desktop		EC2		Music		cisco.settings	opt
+Documents	Library		Pictures	dsci551.pem	unixstuff
+(base) notre@NotredeMacBook-Air ~ % cd hadoop_test
+(base) notre@NotredeMacBook-Air hadoop_test % ls
+hdptest.pem
+(base) notre@NotredeMacBook-Air hadoop_test % !sftp
+sftp -i "hdptest.pem" ec2-user@ec2-34-201-245-163.compute-1.amazonaws.com
+Connected to ec2-34-201-245-163.compute-1.amazonaws.com.
+sftp> ls
+hadoop-3.3.1              hadoop-3.3.1.tar.gz       
+sftp> lls
+hdptest.pem
+sftp> lcd /Users/notre/Desktop/DSCI551/作业/hw2
+sftp> lls
+fsimage384.xml		hw2.ipynb		stats.py
+fsimage386.xml		hw2.pdf			wk4-fsimage564.xml
+sftp> put fsimage384.xml
+Uploading fsimage384.xml to /home/ec2-user/fsimage384.xml
+fsimage384.xml                                100% 8407    97.5KB/s   00:00    
+sftp> put wk4-fsimage564.xml
+Uploading wk4-fsimage564.xml to /home/ec2-user/wk4-fsimage564.xml
+wk4-fsimage564.xml                            100%   16KB 195.4KB/s   00:00    
+sftp> exit
+(base) notre@NotredeMacBook-Air hadoop_test % !ssh
+ssh -i "hdptest.pem" ec2-user@ec2-34-201-245-163.compute-1.amazonaws.com
+Last login: Fri Feb 11 08:19:56 2022 from cpe-172-119-223-69.socal.res.rr.com
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+5 package(s) needed for security, out of 8 available
+Run "sudo yum update" to apply all updates.
+[ec2-user@ip-172-31-90-212 ~]$ ls
+fsimage384.xml  hadoop-3.3.1  hadoop-3.3.1.tar.gz  wk4-fsimage564.xml
+[ec2-user@ip-172-31-90-212 ~]$ exit
+登出
+Connection to ec2-34-201-245-163.compute-1.amazonaws.com closed.
+(base) notre@NotredeMacBook-Air hadoop_test % !stfp
+zsh: event not found: stfp
+(base) notre@NotredeMacBook-Air hadoop_test % !sftp
+sftp -i "hdptest.pem" ec2-user@ec2-34-201-245-163.compute-1.amazonaws.com
+Connected to ec2-34-201-245-163.compute-1.amazonaws.com.
+sftp> put stats.py
+stat stats.py: No such file or directory
+sftp> lls
+hdptest.pem
+sftp> lcd /Users/notre/Desktop/DSCI551/作业/hw2
+sftp> put stats.py
+Uploading stats.py to /home/ec2-user/stats.py
+stats.py                                      100% 2987    34.6KB/s   00:00    
+sftp> exit
+(base) notre@NotredeMacBook-Air hadoop_test % !ssh
+ssh -i "hdptest.pem" ec2-user@ec2-34-201-245-163.compute-1.amazonaws.com
+Last login: Fri Feb 18 04:42:51 2022 from cpe-172-119-223-69.socal.res.rr.com
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+5 package(s) needed for security, out of 8 available
+Run "sudo yum update" to apply all updates.
+[ec2-user@ip-172-31-90-212 ~]$ ls
+fsimage384.xml  hadoop-3.3.1  hadoop-3.3.1.tar.gz  stats.py  wk4-fsimage564.xml
+[ec2-user@ip-172-31-90-212 ~]$ python3 stats.py fsimage384.xml 384.json 
+Traceback (most recent call last):
+  File "stats.py", line 1, in <module>
+    from lxml import etree
+ModuleNotFoundError: No module named 'lxml'
+[ec2-user@ip-172-31-90-212 ~]$ pip3 install lxml
+Defaulting to user installation because normal site-packages is not writeable
+Collecting lxml
+  Downloading lxml-4.8.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl (6.4 MB)
+     |████████████████████████████████| 6.4 MB 24.9 MB/s 
+Installing collected packages: lxml
+Successfully installed lxml-4.8.0
+[ec2-user@ip-172-31-90-212 ~]$ python3 stats.py fsimage384.xml 384.json 
+[ec2-user@ip-172-31-90-212 ~]$ ls
+384.json        hadoop-3.3.1         stats.py
+fsimage384.xml  hadoop-3.3.1.tar.gz  wk4-fsimage564.xml
+[ec2-user@ip-172-31-90-212 ~]$ cat 384.json
+{
+    "number of files": 10,
+    "number of directories": 7,
+    "maximum depth of directory tree": 4,
+    "file size": {
+        "max": 11765,
+        "min": 620
+    }
+}[ec2-user@ip-172-31-90-212 ~]$ python3 stats.py wk4-fsimage564.xml 564.json 
+[ec2-user@ip-172-31-90-212 ~]$ ls
+384.json  fsimage384.xml  hadoop-3.3.1.tar.gz  wk4-fsimage564.xml
+564.json  hadoop-3.3.1    stats.py
+[ec2-user@ip-172-31-90-212 ~]$ cat 564.json
+{
+    "number of files": 29,
+    "number of directories": 9,
+    "maximum depth of directory tree": 6,
+    "file size": {
+        "max": 11392,
+        "min": 19
+    }
+}[ec2-user@ip-172-31-90-212 ~]$ 
+[ec2-user@ip-172-31-90-212 ~]$ exit
+登出
+Connection to ec2-34-201-245-163.compute-1.amazonaws.com closed.
+(base) notre@NotredeMacBook-Air hadoop_test % 
