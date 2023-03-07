@@ -1,0 +1,16 @@
+Q3
+churn=spark.read.csv("churn.csv",header=True)
+import pyspark.sql.functions as fc
+churn = churn.withColumn('TotalCharges', fc.col('TotalCharges').cast('double'))
+churn_rdd=churn.rdd
+
+a)
+>>> churn_rdd.filter(lambda r: r["Churn"]=="Yes" and r["gender"]=="Male").count()
+930
+
+b)
+>>> churn_rdd.filter(lambda r: r["Churn"]=="Yes").map(lambda r: (r["gender"],r["TotalCharges"])).groupByKey().mapValues(lambda l: max(l)).collect()
+[('Male', 8684.8), ('Female', 8127.6)] 
+
+>>> churn_rdd.filter(lambda r: r["Churn"]=="Yes").map(lambda r: (r["gender"],r["TotalCharges"])).reduceByKey(lambda x,y: max(x,y)).collect()
+[('Male', 8684.8), ('Female', 8127.6)] 
