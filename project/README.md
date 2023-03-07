@@ -1,5 +1,5 @@
 ## DSCI 551 Final Project
-###Data Science for social good
+### Data Science for social good
 
 ### Team Member
 	Ying Wang (USC ID: 99xxxxxx93)
