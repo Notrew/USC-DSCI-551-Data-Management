@@ -1,4 +1,8 @@
 ## DSCI 551 Final Project README
+### Team Member
+	Ying Wang (USC ID: 99xxxxxx93)
+	Ziyue Chen (USC ID: 88xxxxxx20)
+    
 ### Codes - each page is associated with a set of javascript+html+css files
 
 #### Homepage
