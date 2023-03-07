@@ -1,0 +1,182 @@
+#Q1
+select COUNT(film_id) 
+FROM film
+WHERE rating="PG-13" and length BETWEEN 100 and 200;
+
++----------------+
+| COUNT(film_id) |
++----------------+
+|            151 |
++----------------+
+1 row in set (0.01 sec)
+
+#Q2
+SELECT first_name,last_name
+FROM actor
+where last_name LIKE "%i_";
+
++------------+-----------+
+| first_name | last_name |
++------------+-----------+
+| JENNIFER   | DAVIS     |
+| BURT       | DUKAKIS   |
+| FRANCES    | DAY-LEWIS |
+| GARY       | PHOENIX   |
+| DAN        | HARRIS    |
+| WOODY      | JOLIE     |
+| BEN        | WILLIS    |
+| GREG       | CHAPLIN   |
+| GENE       | WILLIS    |
+| SUSAN      | DAVIS     |
+| SUSAN      | DAVIS     |
+| CATE       | HARRIS    |
+| BEN        | HARRIS    |
+| HUMPHREY   | WILLIS    |
+| ROCK       | DUKAKIS   |
++------------+-----------+
+15 rows in set (0.00 sec)
+
+#Q3
+SELECT title,length
+FROM film
+WHERE length = (SELECT MAX(length) FROM film);
+
++--------------------+--------+
+| title              | length |
++--------------------+--------+
+| CHICAGO NORTH      |    185 |
+| CONTROL ANTHEM     |    185 |
+| DARN FORRESTER     |    185 |
+| GANGS PRIDE        |    185 |
+| HOME PITY          |    185 |
+| MUSCLE BRIGHT      |    185 |
+| POND SEATTLE       |    185 |
+| SOLDIERS EVOLUTION |    185 |
+| SWEET BROTHERHOOD  |    185 |
+| WORST BANGER       |    185 |
++--------------------+--------+
+10 rows in set (0.00 sec)
+
+#Q4
+SELECT name as category,COUNT(film_id) as total
+from film_category a left JOIN category b on a.category_id=b.category_id
+GROUP BY name;
+
++-------------+-------+
+| category    | total |
++-------------+-------+
+| Action      |    64 |
+| Animation   |    66 |
+| Children    |    60 |
+| Classics    |    57 |
+| Comedy      |    58 |
+| Documentary |    68 |
+| Drama       |    62 |
+| Family      |    69 |
+| Foreign     |    73 |
+| Games       |    61 |
+| Horror      |    56 |
+| Music       |    51 |
+| New         |    63 |
+| Sci-Fi      |    61 |
+| Sports      |    74 |
+| Travel      |    57 |
++-------------+-------+
+16 rows in set (0.00 sec)
+
+#Q5
+select customer_id
+from rental
+GROUP BY customer_id
+HAVING COUNT(customer_id)>=40;
+
++-------------+
+| customer_id |
++-------------+
+|          75 |
+|         144 |
+|         148 |
+|         197 |
+|         236 |
+|         469 |
+|         526 |
++-------------+
+7 rows in set (0.00 sec)
+
+#Q6
+SELECT first_name,last_name
+FROM customer
+where customer_id in (SELECT customer_id from payment GROUP BY customer_id HAVING SUM(amount)>200);
+
++------------+-----------+
+| first_name | last_name |
++------------+-----------+
+| ELEANOR    | HUNT      |
+| KARL       | SEAL      |
++------------+-----------+
+2 rows in set (0.02 sec)
+
+#Q7
+SELECT first_name,last_name
+FROM actor 
+where actor_id not in 
+(SELECT a.actor_id
+from film_actor fa,actor a,film f
+WHERE rating="R"
+and fa.actor_id=a.actor_id
+And fa.film_id=f.film_id);
+
++------------+-----------+
+| first_name | last_name |
++------------+-----------+
+| JANE       | JACKMAN   |
++------------+-----------+
+1 row in set (0.00 sec)
+
+#Q8
+SELECT COUNT(DISTINCT film_id)
+FROM film
+where film_id not in (select DISTINCT film_id FROM inventory);
+
++-------------------------+
+| COUNT(DISTINCT film_id) |
++-------------------------+
+|                      42 |
++-------------------------+
+1 row in set (0.01 sec)
+
+#Q9
+SELECT COUNT(DISTINCT a.actor_id) as total
+FROM actor a, actor b
+WHERE a.first_name=b.first_name
+and a.last_name!=b.last_name
+and a.actor_id!=b.actor_id;
+
++-------+
+| total |
++-------+
+|   122 |
++-------+
+1 row in set (0.01 sec)
+
+#Q10
+SELECT first_name,last_name,city
+from address,customer,city
+WHERE first_name in ("Jamie","Jessie","Leslie")
+And address.address_id=customer.address_id
+And address.city_id=city.city_id
+ORDER BY first_name;
+
++------------+-----------+------------------+
+| first_name | last_name | city             |
++------------+-----------+------------------+
+| JAMIE      | RICE      | Sterling Heights |
+| JAMIE      | WAUGH     | Kuwana           |
+| JESSIE     | BANKS     | Stara Zagora     |
+| JESSIE     | MILAM     | Binzhou          |
+| LESLIE     | GORDON    | Kilis            |
+| LESLIE     | SEWARD    | Pontianak        |
++------------+-----------+------------------+
+6 rows in set (0.01 sec)
+
+ 
