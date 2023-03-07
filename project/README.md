@@ -1,4 +1,6 @@
-## DSCI 551 Final Project README
+## DSCI 551 Final Project
+###Data Science for social good
+
 ### Team Member
 	Ying Wang (USC ID: 99xxxxxx93)
 	Ziyue Chen (USC ID: 88xxxxxx20)
