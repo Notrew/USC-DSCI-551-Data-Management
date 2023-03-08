@@ -2,12 +2,12 @@
 ### 22 Spring	
 
 #### Exams and Score
-|No.| Exam |Score|
-|---|------------------|-----|
-|1|Midterm 1|96.5/100|
-|2|Midterm 2|99/100|
-|3|Final Exam|91/100|
-|-|Weighted Score|96.85/100|
+|No.| Exam |Contents |Score|
+|---|------------------|-----|-----|
+|1|Midterm 1|`File System` `MapReduce` `XML` `Xpath`|96.5/100|
+|2|Midterm 2|`ER` `Relational data models` `SQL` |99/100|
+|3|Final Exam|`cumulative`|91/100|
+|-|Weighted Score|` `|96.85/100|
 
 #### Homworks
 |No.| Main Aplication |Homework Dir|Tags|Score|
