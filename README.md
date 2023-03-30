@@ -17,7 +17,7 @@
 |3|[SQL, EC2 MySQL](https://github.com/Notrew/DSCI-551/blob/main/hw3/hw3-with-comment.pdf)|[Python](https://github.com/Notrew/DSCI-551/tree/main/hw3) |`SQL` `EC2`|100/100|
 |4|[B+ Tree & External Sorting](https://github.com/Notrew/DSCI-551/blob/main/hw4/hw4-index%2Bquery%20execution-with-comment.pdf)|[Python](https://github.com/Notrew/DSCI-551/tree/main/hw4) |`B+ Tree` `External Sorting`|100/100|
 |5|[Hadoop MapReduce & Spark](https://github.com/Notrew/DSCI-551/blob/main/hw5/hw_desc/hw5-mapreduce-spark.pdf)|[Java](https://github.com/Notrew/DSCI-551/tree/main/hw5) |`Hadoop MapReduce` `Spark`|100/100|
-|-|[Final Project](https://github.com/Notrew/iRecycler-App-Building-main)|[JavaScript & HTML & CSS](https://github.com/Notrew/DSCI-551/tree/main/hw5)  |`Restful API` `JavaScript`|99.44/100|
+|-|[Final Project](https://github.com/Notrew/iRecycler-App-Building-main)|[JavaScript & HTML & CSS](https://github.com/Notrew/iRecycler-App-Building-main/tree/main/scr) |`Restful API` `JavaScript`|99.44/100|
 
 #### Labs
 |No.| Main Aplication |Homework Dir|Tags|Score|
